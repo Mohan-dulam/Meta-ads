@@ -1,38 +1,68 @@
 <div class="section">
 
-<h2>Meta Pixel & Tracking (Core of Conversion Marketing)</h2>
+<h2>Meta Pixel and Conversion API (CAPI)</h2>
 
-<p>The Meta Pixel is a tracking script placed on the website that records user activity and sends data back to Meta’s servers.</p>
+<h3>Pixel Tracking Flow</h3>
 
-<h3>What Pixel Enables</h3>
+<pre class="mermaid">
+flowchart LR
+User --> Browser
+Browser --> Pixel
+Pixel --> MetaServer
+MetaServer --> AdOptimization
+</pre>
+
+<p>Pixel is browser-based tracking. It fires when the website loads or user performs an action.</p>
+
+<hr>
+
+<h3>Problem After iOS14</h3>
+<p>Browsers block cookies → pixel misses conversions → ads become inefficient.</p>
+
+<hr>
+
+<h3>Conversion API (CAPI)</h3>
+
+<p>CAPI is server-to-server tracking.</p>
+
+<pre class="mermaid">
+flowchart LR
+User --> WebsiteServer
+WebsiteServer --> MetaServer
+MetaServer --> Attribution
+</pre>
+
+Pixel = Browser tracking  
+CAPI = Server tracking
+
+<hr>
+
+<h3>Why Pixel + CAPI Together?</h3>
 <ul>
-<li>Conversion tracking</li>
-<li>Retargeting</li>
-<li>Lookalike audience creation</li>
-<li>Optimization for conversions</li>
+<li>Pixel catches browser events</li>
+<li>CAPI catches blocked events</li>
+<li>Improves attribution accuracy</li>
 </ul>
 
 <hr>
 
-<h3>Standard Events</h3>
+<h3>Example</h3>
+<p>User buys product:</p>
 <ul>
-<li>PageView</li>
-<li>ViewContent</li>
-<li>AddToCart</li>
-<li>InitiateCheckout</li>
-<li>Purchase</li>
-<li>Lead</li>
+<li>Pixel blocked by browser</li>
+<li>CAPI sends purchase from server</li>
+<li>Meta records conversion correctly</li>
 </ul>
 
 <hr>
 
-<h3>Learning Phase</h3>
-<p>Meta requires approximately 50 conversions per week per ad set to stabilize delivery.</p>
-
-<h3>Aggregated Event Measurement</h3>
-<p>Due to iOS14 privacy rules, Meta tracks prioritized events only. Businesses must rank conversion events.</p>
-
-<h3>Conversion API</h3>
-<p>Server-side tracking which improves accuracy when browser tracking fails.</p>
+<h3>Event Matching</h3>
+<p>Meta matches user using:</p>
+<ul>
+<li>Email</li>
+<li>Phone number</li>
+<li>IP address</li>
+<li>User agent</li>
+</ul>
 
 </div>
