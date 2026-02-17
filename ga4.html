@@ -1,41 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>GA4</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-<h1>Google Analytics 4</h1>
-</header>
-
 <div class="section">
 
-<h2>Key Concepts</h2>
+<h2>Google Analytics 4 – Data Measurement System</h2>
+
+<pre class="mermaid">
+flowchart TD
+UserAction --> GA4Tag
+GA4Tag --> Event
+Event --> GA4Server
+GA4Server --> Reports
+GA4Server --> Attribution
+</pre>
+
+<h3>Key Concepts</h3>
+
 <ul>
-<li>Events</li>
-<li>Parameters</li>
-<li>Conversions</li>
-<li>Attribution</li>
+<li><b>Event:</b> Any interaction</li>
+<li><b>Parameter:</b> Extra event detail</li>
+<li><b>Conversion:</b> Marked important event</li>
 </ul>
 
-<h2>Important Reports</h2>
+<h3>Default Ecommerce Events</h3>
 <ul>
-<li>Realtime</li>
-<li>Acquisition</li>
-<li>Engagement</li>
-<li>Monetization</li>
+<li>view_item</li>
+<li>add_to_cart</li>
+<li>begin_checkout</li>
+<li>purchase</li>
 </ul>
 
-<h2>Debug View</h2>
-<p>Used to check event firing in real time.</p>
+<h3>Attribution</h3>
+<p>GA4 uses data-driven attribution (not last click).</p>
+
+<h3>Example</h3>
+<p>User sees Facebook ad → searches on Google → purchases</p>
+<p>GA4 credits both channels.</p>
 
 </div>
-
-<div style="text-align:center;">
-<a class="back" href="index.html">Back to Home</a>
-</div>
-
-</body>
-</html>
