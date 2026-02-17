@@ -1,58 +1,65 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Campaign Structure</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-<h1>Meta Campaign Structure</h1>
-</header>
-
 <div class="section">
 
-<h2>3 Levels of Meta Ads</h2>
+<h2>Meta Ads Delivery System (How Ads Actually Appear to a User)</h2>
+
+<p>Meta does NOT show ads based only on budget. It runs an auction system every single time a user opens Facebook or Instagram.</p>
+
+<h3>Ad Delivery Flow</h3>
+
+<pre class="mermaid">
+flowchart TD
+U[User Opens Instagram/Facebook] --> R[Meta Checks Available Ads]
+R --> A[Eligible Ads Selected]
+A --> B[Meta Auction Runs]
+B --> C[Ad Rank Calculated]
+C --> D[Highest Value Ad Wins]
+D --> E[Ad Appears to User]
+</pre>
+
+<hr>
+
+<h3>What Determines the Winner? (Ad Rank)</h3>
+
+<p>Meta calculates a score called <b>Total Value</b>.</p>
+
+<b>Total Value = Bid + Estimated Action Rate + Ad Quality</b>
+
 <ul>
-<li>Campaign</li>
-<li>Ad Set</li>
-<li>Ad</li>
+<li><b>Bid:</b> What advertiser is willing to pay</li>
+<li><b>Estimated Action Rate:</b> Probability user will click/convert</li>
+<li><b>Ad Quality:</b> Feedback, engagement, hide rate</li>
 </ul>
 
-<h2>Campaign Level</h2>
-<p>Choose objective and budget optimization (CBO).</p>
+Important:
+<p>Highest budget does NOT always win. Best predicted performance wins.</p>
 
-<h2>Ad Set Level</h2>
+<hr>
+
+<h3>Backend Example</h3>
+
+<p>Two advertisers target same user:</p>
+
 <ul>
-<li>Audience targeting</li>
-<li>Placements</li>
-<li>Budget (ABO)</li>
-<li>Schedule</li>
+<li>Advertiser A: ₹200 bid, poor creative</li>
+<li>Advertiser B: ₹120 bid, highly engaging creative</li>
 </ul>
 
-<h2>Ad Level</h2>
+Meta predictse:
+Estimated Action Rate higher for B → B wins auction.
+
+<hr>
+
+<h3>Campaign → Ad Set → Ad Responsibilities</h3>
+
 <ul>
-<li>Creative</li>
-<li>Primary text</li>
-<li>Headline</li>
-<li>CTA button</li>
+<li><b>Campaign:</b> Defines optimization goal (leads, purchases)</li>
+<li><b>Ad Set:</b> Audience, budget, schedule, placements</li>
+<li><b>Ad:</b> Creative & messaging</li>
 </ul>
 
-<h2>Budget Types</h2>
-<ul>
-<li>Daily Budget</li>
-<li>Lifetime Budget</li>
-<li>CBO vs ABO</li>
-</ul>
+<hr>
 
-<h2>Placements</h2>
-<p>Always start with Automatic placements.</p>
+<h3>Learning Phase</h3>
+<p>Meta tests your ad across multiple users to find who converts best. Needs ~50 conversions/week per ad set.</p>
 
 </div>
-
-<div style="text-align:center;">
-<a class="back" href="index.html">Back to Home</a>
-</div>
-
-</body>
-</html>
